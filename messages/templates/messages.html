@@ -1,0 +1,49 @@
+{% extends 'new_index.html' %}
+
+{% block script %}
+{% endblock %}
+
+{% block content %}
+
+{% if arr %}
+    {% for i in range(size) %}
+<div class="card" style="margin: 2rem;">
+  <div class="card-body">
+      {% if arr[i]['from_user'] == auth %}
+    {% if direct_db.from_user('avatar', arr[i]['to_user']) %}
+
+    {% else %}
+        <img src="{{url_for('static', filename='user_data/avatars/empty.jpeg')}}" alt="User Avatar"
+             class="img-fluid rounded-circle mx-auto d-block" style="height: 4rem;" align="left"/>
+    {% endif %}
+    <h5 class="card-title" style="margin-right:2rem">{{arr[i]['to_user']}}</h5>
+      <p class="card-text">You: {{arr[i]['ttext']}}</p>
+
+      <form action="" method="post">
+      <input type="hidden" name="dialogue" value="{{arr[i]['to_user']}}">
+      <button type="submit" class="btn btn-primary" name="dia" value="Chat">Chat</button>
+      </form>
+      {% else %}
+    {% if direct_db.from_user('avatar', arr[i]['from_user']) %}
+
+    {% else %}
+        <img src="{{url_for('static', filename='user_data/avatars/empty.jpeg')}}" alt="User Avatar"
+             class="img-fluid rounded-circle mx-auto d-block" style="height: 4rem;" align="left"/>
+    {% endif %}
+    <h5 class="card-title">{{arr[i]['from_user']}}</h5>
+      <p class="card-text">{{arr[i]['ttext']}}</p>
+      <form action="" method="post">
+      <input type="hidden" name="dialogue" value="{{arr[i]['from_user']}}">
+      <button type="submit" class="btn btn-primary" name="dia" value="Chat">Chat</button>
+      </form>
+      {% endif %}
+
+
+  </div>
+</div>
+{% endfor %}
+{% else %}
+    <h2>no messages yet</h2>
+{% endif %}
+{% endblock %}
+

@@ -1,0 +1,1 @@
+UPDATE users SET `avatar` = %s WHERE (`username` = '$user');

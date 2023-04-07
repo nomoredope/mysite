@@ -1,0 +1,1 @@
+SELECT $attribute FROM users

@@ -1,0 +1,76 @@
+{% extends 'new_index.html' %}
+{% block content %}
+<div class="container mt-5">
+<h1 class="text-center">About me</h1>
+<p class="text-justify mt-5"></p>
+    <ul class="list-group">
+
+  <li class="list-group-item"><a class="btn btn-primary" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
+    About me
+
+  </a>
+  <div class="collapse" id="collapse2">
+  <div class="card card-body">
+    Name: Anton Slaschev (Слащёв Антон)<br><br>
+    Age: {{datetime.date.today().year - datetime.date(2002, 5, 26).year -
+      ((datetime.date.today().month, datetime.date.today().day) < (datetime.date(2002, 5, 26).month, datetime.date(2002, 5, 26).day))}}
+  </div>
+  </div>
+  </li>
+
+  <li class="list-group-item"><a class="btn btn-primary" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapseExample">
+    My stack
+
+  </a>
+  <div class="collapse" id="collapse3">
+  <div class="card card-body">
+    <b>Python3</b> Flask, Pytorch, NumPy, matplotlib, pandas, PyQt, PyTelegramBotAPI<br><br>
+    <b>Database</b> MySQL, MySQL workbench, SQLite, Redis<br><br>
+    <b>Math</b> Probability theory, Mathematical statistics, Computational mathematics,
+    Linear algebra, Mathematical analysis, Graph theory, Boolean algebra, Theory of computation<br><br>
+    Additional:<br><br>
+    <b>C/С++</b> OOP, STL, OpenGL<br><br>
+    <b>OC and Server</b> Linux, Bash, Docker, Windows Server 2012<br><br>
+    <b>Other skills</b> HTML/CSS, Bootstrap, JSON
+  </div>
+  </div>
+  </li>
+
+  <li class="list-group-item"><a class="btn btn-primary" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Areas of interest
+
+  </a>
+  <div class="collapse" id="collapse4">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+  </div>
+  </li>
+
+  <li class="list-group-item"><a class="btn btn-primary" data-toggle="collapse" href="#collapse5" role="button" aria-expanded="false" aria-controls="collapseExample">
+    My projects
+
+  </a>
+  <div class="collapse" id="collapse5">
+  <div class="card card-body">
+    All my projects are published on my <a class="nav-link" href="https://github.com/nomoredope">GitHub page</a><br>
+    By the way, this website was created entirely by me:<br><b>Frontend</b> (HTML/CSS, Bootstrap 4, without JS)<br><b>Backend</b> (Python3 Flask framework, MySQL database, SMTP email agent)<br><b>WSGI, VPS servers</b> (installation and maintenance, SSL+Domain registration)<br><br>You can also find the full source code on my
+   <a class="nav-link" href="https://github.com/nomoredope">Here</a>
+  </div>
+  </div>
+  </li>
+
+  <li class="list-group-item"><a class="btn btn-primary" data-toggle="collapse" href="#collapse6" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Download my resume
+
+  </a>
+  <div class="collapse" id="collapse6">
+  <div class="card card-body">
+     <p><a class="nav-link" href="static/resume/Resume_ru.pdf" download>Resume (Русский)</a>
+     <p><a class="nav-link" href="static/resume/Resume_en.pdf" download>Resume (English)</a>
+  </div>
+  </div>
+  </li>
+</ul>
+</div>
+{% endblock %}

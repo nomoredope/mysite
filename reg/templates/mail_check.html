@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redeem Email Verification Code</title>
+    <style>
+      /* Add your CSS styles here */
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      h1 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      form {
+        display: inline-block;
+        text-align: left;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Redeem Email Verification Code</h1>
+      <p>Enter the code sent to your email to complete your account registration:</p>
+      <form method="POST" action="">
+        <input type="text" id="verify" name="verify" placeholder="Enter code here">
+        <input type="submit" value="Redeem Code">
+      </form>
+    </div>
+  </body>
+</html>

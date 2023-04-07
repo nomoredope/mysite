@@ -1,0 +1,1 @@
+SELECT username, sign_up_date, avatar FROM users

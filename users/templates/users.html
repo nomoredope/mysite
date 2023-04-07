@@ -1,0 +1,29 @@
+{% extends 'new_index.html' %}
+
+{% block content %}
+<div class="card-columns">
+  {% for i in range(size) %}
+  <div class="card" style="width: 18rem; height: 22rem; margin: 3rem;">
+    {% if arr[i]['avatar'] %}
+    <img style="width: 10rem; margin: 1rem;" src="{{ url_for('profile_image', result = arr[i]['avatar']    }}">
+    {% else %}
+    <img style="width: 10rem; margin: 1rem;" src="{{url_for('static', filename='user_data/avatars/empty.jpeg')}}" alt="User Avatar"
+               class="img-fluid rounded-circle mx-auto d-block"/>
+    {% endif %}
+    <div class="card-body">
+      {% if auth == arr[i]['username'] %}
+      <h5 class="card-title"><a href="/user">{{arr[i]['username']}}</a></h5>
+      {% else %}
+    <h5 class="card-title"><a href="/messages/{{arr[i]['username']}}">{{arr[i]['username']}}</a></h5>
+      {% endif %}
+      <p class="card-text">Sign up date: {{arr[i]['sign_up_date'].date()}} </p>
+      <form action="" method="post">
+      <input type="hidden" name="dialogue" value="{{arr[i]['username']}}">
+      <button type="submit" class="btn btn-primary" name="dia" value="Chat">Chat</button>
+      </form>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock %}

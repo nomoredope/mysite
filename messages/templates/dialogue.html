@@ -1,0 +1,17 @@
+{% extends 'new_index.html' %}
+
+{% block script %}
+{% endblock %}
+
+{% block content %}
+<div class="card" style="overflow-y: scroll; height:33rem;">
+        {% for i in range(size) %}
+            {{arr[i]['ttext']}}<br><br>
+        {% endfor %}
+</div>
+    <form method="post" action="">
+        <label for="mes">Сообщение</label>
+        <input type="text" id="mes" name="mes">
+        <button class="btn btn-primary" type="submit">Отправить</button>
+    </form>
+{% endblock %}

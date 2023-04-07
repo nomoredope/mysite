@@ -1,0 +1,70 @@
+{% extends 'new_index.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+      <div class="col-md-3">
+        {% if avatar %}
+        <img src="{{url_for('static', filename='user_data/avatars/' + auth + '.jpg')}}" alt="User Avatar"
+             class="img-fluid rounded-circle mx-auto d-block"/>
+        {% else %}
+        <img src="{{url_for('static', filename='user_data/avatars/empty.jpeg')}}" alt="User Avatar"
+             class="img-fluid rounded-circle mx-auto d-block"/>
+        {% endif %}
+        <br>
+        <form action="" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <input type="file" class="form-control-file" id="avatar_file" name="avatar_file">
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem">Upload image</button>
+          </div>
+        </form>
+        <h3 class="text-center my-3">{{auth}}</h3>
+      </div>
+      <div class="col-md-9">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-item nav-link active" href="#personal-info" data-toggle="tab">Personal Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="#settings" data-toggle="tab">Settings</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="personal-info">
+            <table class="table table-striped mt-3">
+              <tbody>
+                <tr>
+                  <th scope="row">Email</th>
+                  <td>{{direct_db.from_user('mail',auth)}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sign up date:</th>
+
+                  <td>{{  direct_db.from_user('sign_up_date',auth)}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="settings">
+            <form>
+              <br>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" value="johndoe@example.com">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" value="********">
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" value="********">
+</div>
+<button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

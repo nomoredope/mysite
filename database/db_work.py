@@ -58,3 +58,16 @@ def call_proc(database: dict, proc_name: str, *args):
         print('param_list=', param_list)
         res = cursor.callproc(proc_name, param_list)
     return res
+
+
+def input_blob(database: dict, sql: str, blob):
+    with DBConnection(database) as cursor:
+        if cursor is None:
+            raise ValueError('Курсор не найден')
+        try:
+            cursor.execute(sql, (blob,))
+            cursor.connection.commit()
+        except Exception as ex:
+            print(ex)
+            raise ValueError('Ошибка выполнения sql запроса')
+    return True

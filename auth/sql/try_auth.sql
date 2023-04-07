@@ -1,0 +1,1 @@
+SELECT username, user_group, avatar FROM nomoredope_db.users WHERE mail = '$mail' and password = '$password'
